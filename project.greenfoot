@@ -1,16 +1,19 @@
 #Greenfoot properties
-#Wed May 04 20:23:58 CEST 2016
+#Wed May 04 20:35:52 CEST 2016
 class.Border.superclass=Block
+simulation.speed=30
 class.SnakeBody.image=smiley1.png
 class.Block.superclass=greenfoot.Actor
 class.SnakeWorld.superclass=greenfoot.World
 mainWindow.width=850
 project.charset=UTF-8
 version=2.8.0
+class.Apple.image=mushroom.png
+class.Border.image=grass.png
 class.SnakeBody.superclass=Block
-class.Border.image=Wall.jpg
-class.SnakeWorld.image=sand2.jpg
 world.lastInstantiated=SnakeWorld
+class.SnakeWorld.image=sand2.jpg
 mainWindow.y=40
 mainWindow.x=40
+class.Apple.superclass=Block
 mainWindow.height=600

@@ -22,6 +22,12 @@ public class SnakeWorld extends World {
         SnakeBody body = new SnakeBody();
         snake.add(body);
         addObject(body, 2, 2);
+        
+        Apple apple = new Apple();
+        addObject(apple, 
+            Greenfoot.getRandomNumber(getWidth()-2) +1, 
+            Greenfoot.getRandomNumber(getHeight()-2)+1);
+        
         for (int x = 0; x < getWidth(); x++) {
             addObject(new Border(), x, 0);
             addObject(new Border(), x, getHeight() - 1);
@@ -34,11 +40,18 @@ public class SnakeWorld extends World {
     
     public void act() {
         if(dead) return;
+        changeDirection();
         SnakeBody head = snake.getLast();
         head.setImage("button-green.png");
         SnakeBody newHead  = new SnakeBody();
         int newHeadX = head.getX() + dx;
         int newHeadY = head.getY() + dy;
+        
+        List<Block> blocks = getObjectsAt(newHeadX, newHeadY, Block.class);
+        for(Block block : blocks) {
+            block.collision(this);
+        }
+        
         addObject(newHead, newHeadX, newHeadY);
         snake.add(newHead);
         if(tailCounter ==0){
@@ -47,7 +60,6 @@ public class SnakeWorld extends World {
         } else {
             tailCounter--;
         }
-        changeDirection();
     }
     
     private void changeDirection() {
@@ -67,5 +79,13 @@ public class SnakeWorld extends World {
             dx = 0;
             dy = -1;
         }
+    }
+    
+    public void dead() {
+        dead = true;
+    }
+    
+    public void grow(int size) {
+        tailCounter+=size;
     }
 }
