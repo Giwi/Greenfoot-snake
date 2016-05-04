@@ -1,0 +1,11 @@
+#BlueJ class context
+comment0.target=SnakeWorld
+comment0.text=\n\ Write\ a\ description\ of\ class\ SnakeWorld\ here.\n\n\ @author\ Xavier\ MARIN\n\ @version\ 0.0.1\n
+comment1.params=
+comment1.target=SnakeWorld()
+comment1.text=\n\ Constructor\ for\ objects\ of\ class\ SnakeWorld.\n
+comment2.params=
+comment2.target=void\ act()
+comment3.params=
+comment3.target=void\ changeDirection()
+numComments=4
